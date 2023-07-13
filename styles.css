@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif
+}
+
+body {
+  height: 100vh;
+  background-color: #fff;
+  background-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: orchid;
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn {
+  background-color: orchid;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action_btn:hover {
+  scale: 1.05;
+  color: #000;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+  z-index: 888;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.61);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  height: 240px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* HERO */
+section {
+  padding: 100px 80px;
+}
+
+.hero {
+  /* background-image: url('images/main.jpg');
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 100px); */
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.hero:before {
+  z-index: 777;
+  content: '';
+  position: absolute;
+  /* background: rgba(3, 96, 251, 0.3); */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hero .content {
+  z-index: 888;
+  color: #fff;
+  width: 70%;
+  margin-top: 50px;
+  display: none;
+}
+
+.hero .content.active {
+  display: block;
+}
+
+.hero .content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+
+.hero .content h1 span {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.hero .content p {
+  margin-bottom: 65px;
+  letter-spacing: 1.5px;
+  line-height: 20px;
+}
+
+.hero .content a {
+  background: #fff;
+  padding: 10px 25px;
+  color: #000;
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.hero .content a:hover {
+  color: orchid;
+  font-weight: 650;
+}
+
+.hero img {
+  z-index: 000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-navigation {
+  z-index: 888;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(80px);
+  margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn {
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active {
+  background: orchid;
+}
+
+.slider-navigation .nav-btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover {
+  transform: scale(1.2);
+}
+
+.img-slide {
+  position: absolute;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.img-slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s ease;
+  transition-property: clip-path;
+}
+
+.short-about .content2 {
+  display: flex;
+  justify-items: end;
+  align-items: start;
+}
+
+.short-about .content2 h3 {
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+      display: none;
+  }
+}
+
+.navbar .toggle_btn {
+  display: block;
+}
+
+.dropdown_menu {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .dropdown_menu {
+      left: 2rem;
+      width: unset;
+  }
+}
