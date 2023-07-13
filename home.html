@@ -9,7 +9,9 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
         crossorigin="anonymous" 
         referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="try.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
     <title>Himalya Quartz</title>
   </head>
   <body>
@@ -108,51 +110,60 @@
                 
         </section>
 
+        <!--Caraousel Products section -->
+        <section>
+            <div class="wrapper">
+                <i class="fa-solid fa-angle-left"></i>
+                <ul class="carausel">
+                    <li class="card">
+                        <div class="img"><img src="images/amethyst.webp" alt="image"></div>
+                        <h2>Amethyst</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/nephrite jade.avif" alt="image"></div>
+                        <h2>Nephrite Jade</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/palm stone.avif" alt="image"></div>
+                        <h2>Palm Stone</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/apophyllite crystal.webp" alt="image"></div>
+                        <h2>Apophyllite Crystal</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/opal gemstone.avif" alt="image"></div>
+                        <h2>Opal Gemstone</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/pink samadhi quartz.webp" alt="image"></div>
+                        <h2>Pink Samadhi Quartz</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/bracelets.avif" alt="image"></div>
+                        <h2>Bracelets</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/elephant.avif" alt="image"></div>
+                        <h2>Elephant</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/Rose quartz (ganesha).avif" alt="image"></div>
+                        <h2>Rose Quartz (Ganesha)</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/orange cathedral.avif" alt="image"></div>
+                        <h2>Orange Cathedral</h2>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="images/super seven.avif" alt="image"></div>
+                        <h2>Super Seven</h2>
+                    </li>
+                </ul>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </section>
     </main>
 
-    <script>
-        // JS for dropdown menu
-        const toggleBtn = document.querySelector('.toggle_btn')
-        const toggleBtnIcon = document.querySelector('.toggle_btn i')
-        const dropDownMenu = document.querySelector('.dropdown_menu')
-
-        toggleBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-
-            toggleBtnIcon.classList = isOpen
-            ? 'fa-solid fa-xmark'
-            : 'fa-solid fa-bars'
-        }
-
-        // JS for video slider navigation
-        const btns = document.querySelectorAll(".nav-btn");
-        const slides = document.querySelectorAll(".img-slide")
-        const contents = document.querySelectorAll(".content");
-
-        var sliderNav = function(manual) {
-            btns.forEach((btn) => {
-                btn.classList.remove("active");
-            });
-
-            slides.forEach((slide) => {
-                slide.classList.remove("active");
-            });
-
-            contents.forEach((content) => {
-                content.classList.remove("active");
-            });
-
-            btns[manual].classList.add("active");
-            slides[manual].classList.add("active");
-            contents[manual].classList.add("active");
-        }
-
-        btns.forEach((btn, i) => {
-            btn.addEventListener("click", () => {
-                sliderNav(i);
-            });
-        });
-    </script>
   </body>
 </html>
