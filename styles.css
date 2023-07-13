@@ -2,11 +2,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
   font-family: 'Roboto', sans-serif
 }
 
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+}
+
 body {
-  height: 100vh;
   background-color: #fff;
   background-position: center;
 }
@@ -26,9 +48,20 @@ a:hover {
 }
 
 header {
+  display: flex;
   position: relative;
   padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
+
+section {
+  padding: 2rem;
+} 
 
 .navbar {
   width: 100%;
@@ -252,31 +285,29 @@ header {
   text-transform: uppercase;
 }
 
-.short-about {
-  width: 100%;
-  padding-top: 60px;
-  padding-left: 40px;
-  padding-right: 40px;
-  background-color: #fff;
-}
-
-.content2 {
-  width: 550px;
-  text-align: center;
-}
-
-.row {
+.short-about .row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.short-about .row .image {
+  flex: 1 1 50%;
+}
+
+.short-about .row .image img{
+  width: 100%;
+}
+
+.short-about .row .content2 {
+  flex: 1 1 50%;
+  padding: 2rem;
 }
 
 .content2 h3 {
   color: #000;
   font-size: 2rem;
   text-transform: uppercase;
-  padding-top: 20px;
   margin-bottom: 35px;
 }
 
@@ -285,7 +316,7 @@ header {
   letter-spacing: 1px;
   line-height: 18px;
   font-size: 16px;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 
 .short-about .row .content2 a {
@@ -304,22 +335,25 @@ header {
 }
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .navbar .links,
   .navbar .action_btn {
       display: none;
   }
+  .navbar .toggle_btn {
+    display: inline-block;
+  }
+  
+  .dropdown_menu {
+    display: block;
+  }
+
+  section {
+    padding: 2rem;
+  }
 }
 
-.navbar .toggle_btn {
-  display: block;
-}
-
-.dropdown_menu {
-  display: block;
-}
-
-@media (max-width: 576px) {
+@media (max-width: 550px) {
   .dropdown_menu {
       left: 2rem;
       width: unset;
